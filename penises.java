@@ -1,22 +1,51 @@
-import java.util.Scanner;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.Random;
 
 public class penises {
 
-    private static final DecimalFormat df = new DecimalFormat("0.00");000000000000000000000000000000000000000000000000
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+
+        return randomNum;
+    }
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        float i;
-        float summ = 0;
-        float numero = 0.0f;
-        for (i = 1; i <= 10; i++){
-            numero = 1.0f / i;
-            System.out.println(df.format(1.0f / i));
-            summ = summ + numero;
+        int[] array = new int[10];
+        for (int i = 0; i < 10; i++){
+            array[i] = randInt(1, 50);
         }
+
+        for (int i = 0; i < 10; i++){
+            System.out.println(array[i]);
+        }
+
         System.out.println("");
-        System.out.println(summ);
+
+        Arrays.sort(array);
+        for (int i = 0; i < 10; i++){
+            System.out.println(array[i]);
+        }
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+        int[] array2 = new int[10];
+        for (int i = 0; i < 10; i++){
+            array2[i] = (int) (Math.random() * 50);
+        }
+
+        for (int i = 0; i < 10; i++){
+            System.out.println(array2[i]);
+        }
+
+        Arrays.sort(array2);
+        System.out.println("");
+        for (int i = 0; i < 10; i++){
+            System.out.println(array2[i]);
+        }
+
     }
 }
